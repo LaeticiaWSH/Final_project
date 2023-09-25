@@ -1,0 +1,50 @@
+<!-- {% load static %}
+
+<link rel="stylesheet" href="{% static 'css/menu.css' %}">
+
+<div class="menu">
+
+    {% for donut in donuts %}
+    <div class="donut">
+        <img src="{{ donut.image.url }}" alt="{{ donut.name }}" class="donut-img">
+        <h3 class="donut-name">{{ donut.name }}</h3>
+        <p class="donut-category">Category: {{ donut.get_category_display }}</p>
+        <p class="donut-price">Price: ${{ donut.price }}</p>
+        <label for="quantity">Quantity:</label>
+        <input type="number" name="quantity" id="quantity" value="1" min="1">
+        <button onclick="addToCart('{{ donut.id }}')">Add to Cart</button>
+         for now -->
+        <!-- <br />
+        <br />
+    </div>
+    {% endfor %}
+</div> -->
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/menu.css' %}">
+
+<div class="menu">
+
+    {% for category, donuts in donuts_by_category.items %}
+    <div class="category">
+        <h2>{{ category }}</h2>
+        <div class="donut-list">
+            {% for donut in donuts %}
+            <div class="donut">
+                <img src="{{ donut.image.url }}" alt="{{ donut.name }}" class="donut-img">
+                <h3 class="donut-name">{{ donut.name }}</h3>
+                <p class="donut-category">Category: {{ donut.get_category_display }}</p>
+                <p class="donut-price">Price: ${{ donut.price }}</p>
+                <label for="quantity">Quantity:</label>
+                <input type="number" name="quantity" id="quantity" value="1" min="1">
+                <button onclick="addToCart('{{ donut.id }}')">Add to Cart</button>
+                <!-- for now -->
+                <br />
+                <br />
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% endfor %}
+
+</div>

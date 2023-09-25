@@ -1,0 +1,238 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HomePage</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Croissant+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+</head>
+
+<body>
+
+    <!-- This is for the top of the page -->
+    <section class="hero">
+        <img src="{% static 'images/donut_background.png' %}" alt="Introductory image" class="img" id="d_back">
+        <div class="topbar">
+            <div class="container">
+                <address class="topbar-item">
+                    <!-- This is used with the script tag connected to make it work -->
+                    <div class="icon">
+                        <ion-icon name = "location-outline" aria-hidden = "true"></ion-icon>
+                    </div>
+                    <span class="span">
+                        Donut St, Sprinkleburg City, Moka 1111, Mauritius
+                    </span>
+                </address>
+                <!-- just to make it more pretty -->
+                <div class="separator"></div>
+
+                <div class="topbar-item item-2">
+                    <div class="icon">
+                        <ion-icon name = "time-outline" aria-hidden = "true"></ion-icon>
+                    </div>
+                    <span class = "span">Available : 9.30 am to 8h30 pm</span>
+                </div>
+
+                <a href="#" class="topbar-item link">
+                    <div class = "icon">
+                        <ion-icon name = "call-outline" aria-hidden = "true"></ion-icon>
+                    </div>
+                    <span class = "span"> +230 5123 456</span>
+                </a>
+                <div class = "separator"></div>
+
+                <a href="#" class = "topbar-item link">
+                    <div class = "icon">
+                        <ion-icon name = "mail-outline" aria-hidden = "true"></ion-icon>
+                    </div>
+
+                    <span class = "span">DonutsDreams@gmail.com</span>
+                </a>
+
+            </div>
+            <div id="line"></div>
+        </div>
+        
+      
+
+
+        <!-- 
+            - #HEADER
+        -->
+    
+        <header class="header" data-header>
+            <div class="container">
+    
+                <p class="logo">
+                    <img src="{% static 'images/donut.svg' %}" width="160" height="50" alt="Donuts Dreams - Home" class="img">
+                    <span class="logo-text">Donuts <br/> <span class="logo-text-2">Dreams</span></span>
+                </p>
+    
+                <nav class="navbar" data-navbar>
+                        <button class="close-btn" aria-label="close menu" data-nav-toggler>
+                            <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+                        </button>
+    
+                    <ul class="navbar-list">
+    
+                        <li class="navbar-item">
+                            <a href="#home" class="navbar-link hover-underline active">
+                                <div class="separator"></div>
+    
+                                <span class="span">Home</span>
+                            </a>
+                        </li>
+    
+                        <li class="navbar-item">
+                            <a href="{% url 'menu' %}" class="navbar-link hover-underline">
+                                <div class="separator"></div>
+    
+                                <span class="span">Donuts</span>
+                            </a>
+                        </li>
+    
+                        <li class="navbar-item">
+                            <a href="#about" class="navbar-link hover-underline">
+                                <div class="separator"></div>
+    
+                                <span class="span">About Us</span>
+                            </a>
+                        </li>
+    
+                        <li class="navbar-item">
+                            <a href="#" class="navbar-link hover-underline">
+                                <div class="separator"></div>
+    
+                                <span class="span">Events</span>
+                            </a>
+                        </li>
+    
+                        <li class="navbar-item">
+                            <a href="#" class="navbar-link hover-underline">
+                                <div class="separator"></div>
+    
+                                <span class="span">LogIn</span>
+                            </a>
+                        </li>
+    
+                    </ul>
+    
+                    <div class="text-center">
+                        <p class="headline-1 navbar-title">Visit Us</p>
+    
+                        <address class="body-4">
+                        Donut St, Sprinkleburg City,  <br>
+                            Moka 1111, Mauritius
+                        </address>
+    
+                        <p class="body-4 navbar-text">Open: 9.30 am - 8h30 pm</p>
+    
+                        <a href="#" class="body-4 sidebar-link">DonutsDreams@gmail.com</a>
+    
+                        <div class="separator"></div>
+    
+                        <p class="contact-label">Contact Us</p>
+    
+                        <a href="#" class="body-1 contact-number hover-underline">
+                            +230 5123 456
+                        </a>
+                        <div class="tab">
+                            <img src="{% static 'images/donut.svg' %}" width="100" height="60" alt="Donuts Dreams - Home" class="img">
+                            <span class="tab-txt">Donuts <br /> <span class="logo-txt-2">Dreams</span></span>
+                        </div>
+                    </div>
+    
+                </nav>
+    
+            <a href="{% url 'menu' %}" class="btn btn-secondary">
+                    <span class="text text-1">Order Now</span>
+    
+                    <span class="text text-2" aria-hidden="true">Order Now</span>
+                </a> 
+
+                <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
+                    <span class="line line-1"></span>
+                    <span class="line line-2"></span>
+                    <span class="line line-3"></span>
+                </button>
+    
+                <div class="overlay" data-nav-toggler data-overlay></div>
+    
+            </div>
+            
+        </header>
+</section>
+<!-- This is the lower part -->
+    <article>
+        <div id="left">
+            <!-- Inside the div? -->
+        </div>
+        <h3>"Your Imagination, Our Customization."</h3>
+        <div id="services">
+            <div class="service-left">
+                <img src="{% static 'images/service.jpg' %}" alt="Services" width="570px" height="570px" class="img-ser">
+                <!-- <div class="text-container">
+                    <div class="image-container">
+                        <img src="{% static 'images/service-3.jpg' %}" width="285" height="285" class="img-vice">
+                        <img src="{% static 'images/service-2.jpg' %}" width="285" height="285" class="img-new">
+                        <div class="service-right">
+                    </div>
+                    <h2 class="custom-txt">Our Service</h2>
+                    <br>
+                    <p>At Donuts Dreams, we turn your wildest ideas into reality. Our passion is crafting unique solutions that
+                                mirror your imagination.We believe that every individual's imagination holds the key to exceptional experiences. Our mission is to turn your
+                                unique ideas into reality through our dedicated customization services. Whether it's crafting personalized products or
+                                tailoring solutions to your specific needs, we're here to bring your imagination to life. Your vision is our
+                                inspiration, and together, we'll create something truly extraordinary. </p>
+                    
+                </div> -->
+                <div class="text-container">
+                    <div class="image-container">
+                        <img src="{% static 'images/service-3.jpg' %}" width="285" height="285" class="img-vice">
+                        <img src="{% static 'images/service-2.jpg' %}" width="285" height="285" class="img-new">
+                    </div>
+                    <div class="text-content">
+                        <h2 class="custom-txt">Our Service</h2>
+                        <br>
+                        <p>At Donuts Dreams, we turn your wildest ideas into reality. Our passion is crafting unique solutions that
+                            mirror your imagination. We believe that every individual's imagination holds the key to exceptional
+                            experiences.
+                            Our mission is to turn your unique ideas into reality through our dedicated customization services. Whether
+                            it's
+                            crafting personalized products or tailoring solutions to your specific needs, we're here to bring your
+                            imagination
+                            to life. Your vision is our inspiration, and together, we'll create something truly extraordinary.</p>
+                        <a href="#" class="sneaky-link">Contact us</a>
+                    </div>
+                </div>
+
+                <!-- <div class="image-container">
+                    <img src="{% static 'images/service-3.jpg' %}" width="285" height="285" class="img-vice">
+                    <img src="{% static 'images/service-2.jpg' %}" width="285" height="285" class="img-new">
+                    <div class="service-right">
+                        <p>At Donuts Dreams, we turn your wildest ideas into reality. Our passion is crafting unique solutions that mirror
+                            your imagination. </p>
+                    
+                    </div>
+                </div>   -->
+            </div>
+        </div>
+        <div class="wave-container"></div>
+        <div>glassmorphism and footer</div>
+    
+    </article>
+
+    <!-- the script to ion-icon -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="{% static 'javascript/home.js' %}"></script>
+</body>
+
+</html>
