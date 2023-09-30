@@ -1,0 +1,158 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABOUT US</title>
+        <link rel="stylesheet" href="{% static 'css/about-us.css' %}">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Tilt+Prism&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
+        <!-- Unicons CSS -->
+        <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+        <link href="https://fonts.googleapis.com/css2?family=Croissant+One&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <!-- <h3>we are happy</h3> -->
+    <nav class="nav" id="nav">
+        <i class="uil uil-bars navOpenBtn"></i>
+        <p class="logo">
+            <img src="{% static 'images/donut.svg' %}" width="90" height="50" alt="Donuts Dreams - Home" class="img">
+            <span class="logo-text">Donuts <br /> <span class="logo-text-2">Dreams</span></span>
+        </p>
+    
+        <ul class="nav-links">
+            <i class="uil uil-times navCloseBtn"></i>
+            <li class="li"><a href="{% url 'home' %}">
+                    <div class="separator"></div><span class="tab">HOME</span>
+                </a></li>
+            <li class="li"><a href="{% url 'menu' %}">
+                    <div class="separator"></div><span class="tab">DONUTS</span>
+                </a></li>
+            <li class="li"><a href="{% url 'events' %}">
+                    <div class="separator"></div><span class="tab">EVENTS</span>
+                </a></li>
+            <li class="li"><a href="#">
+                    <div class="separator"></div><span class="tab">LOGIN</span>
+                </a></li>
+        </ul>
+    
+        <!-- <i class="uil uil-search search-icon" id="searchIcon"></i>
+        <div class="search-box">
+            <i class="uil uil-search search-icon"></i>
+            <input type="text" placeholder="Search here..." id="search-bar" />
+        </div> -->
+    </nav>
+    <div class="image-container">
+        <img src="{%static 'images/sstraw.jpg'%}" alt="Strawberry Image" class="image">
+        <section class = "section">"We take our donut-making to heart and soul."</section>
+    </div>
+    <!-- <div class="context">
+        <img src="{%static 'images/wave-3.svg'%}" alt="Strawberry Image" class="svg-icon">
+    </div> -->
+    <div class = "container">
+    <div class="left">
+        <img src="{%static 'images/food-aesthetic.jpg'%}" alt="" class="egg">
+        <!-- <img src="{%static 'images/Straw.jpg'%}" alt="" class="egg"> -->
+
+    </div>
+        <article class="right">
+            <h4>Who we are ?</h4>
+            <p class="self">
+            "Our mission is simple: to elevate your everyday with the finest and most delectable donuts. Taste,
+            quality, and innovation are our guiding principles.<br>
+        
+            We delight in constantly surprising you with fresh creations."</p><br>
+            <a href= "#" class="order">Order Now</a>
+        </article>
+    </div>
+
+
+
+    <footer class="footer">
+        <div class="ocean">
+            <div class="wave"></div>
+            <div class="wave"></div>
+            <div class="wave"></div>
+        </div>
+        <div class="container">
+            <div class="col1">
+                <a href="#" class="brand">
+                    <p class="logo">
+                        <img src="{% static 'images/donut.svg' %}" width="80" height="51" alt="Donuts Dreams - Home"
+                            class="img">
+                        <span class="logo-txt">Donuts <br /> <span class="logotxt-2">Dreams</span></span>
+                    </p>
+                </a>
+                <ul class="media-icons">
+                    <li><a href="#"><ion-icon name="logo-facebook"></ion-icon></a></li>
+                    <li><a href="#"><ion-icon name="logo-twitter"></ion-icon></a></li>
+                    <li><a href="#"><ion-icon name="logo-linkedin"></ion-icon></a></li>
+                    <li><a href="#"><ion-icon name="logo-instagram"></ion-icon></a></li>
+                </ul>
+            </div>
+            <div class="col2">
+                <ul class="menu">
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    <li><a href="{% url 'menu' %}">Donuts</a></li>
+                    <li><a href="{% url 'about' %}">About Us</a></li>
+                    <li><a href="#Events">Events</a></li>
+                    <li><a href="#">Login</a></li>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem excepturi ipsam unde
+                        obcaecati iusto velit labore consequuntur officiis aut neque?</p>
+                </ul>
+            </div>
+    
+            <!-- <ul class="menu">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#">Donuts</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Events</a></li>
+                        <li><a href="#">Login</a></li>
+                    </ul> -->
+            <div class="col3">
+                <p>Subscribe to our newsletter</p>
+                <form>
+                    <div class="input-wrap">
+                        <input type="email" placeholder="ex@gmail.com" /><button type="submit"><i
+                                class="fa-solid fa-paper-plane"></i></button>
+                    </div>
+                </form>
+                <ul class="services-icons">
+                    <li>
+                        <a href="#"><i class="fa-brands fa-cc-paypal"></i></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa-brands fa-cc-apple-pay"></i></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa-brands fa-google-pay"></i></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa-brands fa-cc-amazon-pay"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="mekk">
+                <p>©2023 Designed by a lettuce | All Rights Reserved</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="{% static 'javascript/about-us.js' %}"></script>
+
+</body>
+</html>

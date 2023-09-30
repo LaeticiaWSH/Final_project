@@ -11,6 +11,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Croissant+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tilt+Prism&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
     <link rel="stylesheet" href="{% static 'css/home.css' %}">
 </head>
 
@@ -60,12 +63,7 @@
             <div id="line"></div>
         </div>
         
-      
-
-
-        <!-- 
-            - #HEADER
-        -->
+    <!-- - #HEADER-->
     
         <header class="header" data-header>
             <div class="container">
@@ -99,7 +97,7 @@
                         </li>
     
                         <li class="navbar-item">
-                            <a href="#about" class="navbar-link hover-underline">
+                            <a href="{% url 'about' %}" class="navbar-link hover-underline">
                                 <div class="separator"></div>
     
                                 <span class="span">About Us</span>
@@ -107,7 +105,7 @@
                         </li>
     
                         <li class="navbar-item">
-                            <a href="#" class="navbar-link hover-underline">
+                            <a href="{% url 'events' %}" class="navbar-link hover-underline">
                                 <div class="separator"></div>
     
                                 <span class="span">Events</span>
@@ -174,31 +172,16 @@
         <div id="left">
             <!-- Inside the div? -->
         </div>
-        <h3>"Your Imagination, Our Customization."</h3>
+        <h3 class="title">"Your Imagination, Our Customization."</h3>
         <div id="services">
             <div class="service-left">
                 <img src="{% static 'images/service.jpg' %}" alt="Services" width="570px" height="570px" class="img-ser">
-                <!-- <div class="text-container">
-                    <div class="image-container">
-                        <img src="{% static 'images/service-3.jpg' %}" width="285" height="285" class="img-vice">
-                        <img src="{% static 'images/service-2.jpg' %}" width="285" height="285" class="img-new">
-                        <div class="service-right">
-                    </div>
-                    <h2 class="custom-txt">Our Service</h2>
-                    <br>
-                    <p>At Donuts Dreams, we turn your wildest ideas into reality. Our passion is crafting unique solutions that
-                                mirror your imagination.We believe that every individual's imagination holds the key to exceptional experiences. Our mission is to turn your
-                                unique ideas into reality through our dedicated customization services. Whether it's crafting personalized products or
-                                tailoring solutions to your specific needs, we're here to bring your imagination to life. Your vision is our
-                                inspiration, and together, we'll create something truly extraordinary. </p>
-                    
-                </div> -->
                 <div class="text-container">
                     <div class="image-container">
                         <img src="{% static 'images/service-3.jpg' %}" width="285" height="285" class="img-vice">
                         <img src="{% static 'images/service-2.jpg' %}" width="285" height="285" class="img-new">
                     </div>
-                    <div class="text-content">
+                    <div class="text-content" id="cust">
                         <h2 class="custom-txt">Our Service</h2>
                         <br>
                         <p>At Donuts Dreams, we turn your wildest ideas into reality. Our passion is crafting unique solutions that
@@ -213,21 +196,128 @@
                     </div>
                 </div>
 
-                <!-- <div class="image-container">
-                    <img src="{% static 'images/service-3.jpg' %}" width="285" height="285" class="img-vice">
-                    <img src="{% static 'images/service-2.jpg' %}" width="285" height="285" class="img-new">
-                    <div class="service-right">
-                        <p>At Donuts Dreams, we turn your wildest ideas into reality. Our passion is crafting unique solutions that mirror
-                            your imagination. </p>
-                    
-                    </div>
-                </div>   -->
             </div>
         </div>
-        <div class="wave-container"></div>
-        <div>glassmorphism and footer</div>
-    
+        <!-- <div class="wave-container"></div> -->
+
+        <div class="best-sellers">
+            <h3 class="tt">Our Best Sellers</h3>
+            <div class="scroll-container">
+                <div class="box">
+                    <img src="{% static 'images/Peanut-donut.png'%}" alt="Best-Selling Donut" id="rv-0">
+                    <h3 class="d-title">Peanut Butter Puffs</h3>
+                    <p>Delicious peanut-filled donut, drizzled with creamy peanut butter and crushed peanuts.</p>
+                    <p class="price">$2.99</p>
+                    <div class="star-rating">
+                        <label for="star5">&#9733;</label>
+                        <label for="star4">&#9733;</label>
+                        <label for="star3">&#9733;</label>
+                        <label for="star2">&#9733;</label>
+                        <label class="star-5" for="star1">&#9733;</label>
+                    </div>
+                </div>
+                <div class="box">
+                    <img src="{% static 'images/Hazelnut-Choco.png'%}" alt="Best-Selling Donut" id="rv">
+                        <h3 class="d-title">Almond Joyride</h3>
+                        <p>Delectable almond-infused donut, topped with toasted almonds for a nutty delight.</p>
+                        <p class="price">$2.99</p>
+                        <div class="star-rating">
+                            <label for="star5">&#9733;</label>
+                            <label for="star4">&#9733;</label>
+                            <label for="star3">&#9733;</label>
+                            <label for="star2">&#9733;</label>
+                            <label for="star1">&#9733;</label>
+                        </div>
+                </div>
+                <div class="box">
+                        <img src="{% static 'images/Chocolate-Rasberry.png'%}" alt="Best-Selling Donut" id="rv2">
+                        <h3 class="d-title">Berry Bliss Bomber</h3>
+                        <p>Indulge in a luscious chocolate-raspberry donut, a perfect blend of sweet and tangy.</p>
+                        <p class="price">$2.99</p>
+                        <div class="star-rating">
+                            <label for="star5">&#9733;</label>
+                            <label for="star4">&#9733;</label>
+                            <label for="star3">&#9733;</label>
+                            <label for="star2">&#9733;</label>
+                            <label class="star-5" for="star1">&#9733;</label>
+                        </div>
+                </div>
+            <div class="scroll-buttons">
+                <button class="prev-button">Left</button>
+                <button class="next-button">Right</button>
+            </div>
+        </div>
     </article>
+
+    <footer class="footer">
+        <div class="ocean">
+            <div class="wave"></div>
+            <div class="wave"></div>
+            <div class="wave"></div>
+        </div>
+        <div class="container">
+            <div class="col1">
+                <a href="#" class="brand"><p class="logo">
+                    <img src="{% static 'images/donut.svg' %}" width="80" height="20" alt="Donuts Dreams - Home" class="img">
+                    <span class="logo-txt">Donuts <br /> <span class="logotxt-2">Dreams</span></span>
+                </p></a>
+                <ul class="media-icons">
+                    <li><a href="#"><ion-icon name="logo-facebook"></ion-icon></a></li>
+                    <li><a href="#"><ion-icon name="logo-twitter"></ion-icon></a></li>
+                    <li><a href="#"><ion-icon name="logo-linkedin"></ion-icon></a></li>
+                    <li><a href="#"><ion-icon name="logo-instagram"></ion-icon></a></li>
+                </ul>
+            </div>
+            <div class="col2">
+                <ul class="menu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="{% url 'menu' %}">Donuts</a></li>
+                    <li><a href="{% url 'about' %}">About Us</a></li>
+                    <li><a href="{% url 'events' %}">Events</a></li>
+                    <li><a href="#">Login</a></li>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem excepturi ipsam unde
+                    obcaecati iusto velit labore consequuntur officiis aut neque?</p>
+                </ul>
+            </div>
+    
+        <!-- <ul class="menu">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#">Donuts</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Events</a></li>
+            <li><a href="#">Login</a></li>
+        </ul> -->
+            <div class="col3">
+                <p>Subscribe to our newsletter</p>
+                <form>
+                    <div class="input-wrap">
+                        <input type="email" placeholder="ex@gmail.com" /><button type="submit"><i
+                            class="fa-solid fa-paper-plane"></i></button>
+                    </div>
+                </form>
+                <ul class="services-icons">
+                    <li>
+                        <a href="#"><i class="fa-brands fa-cc-paypal"></i></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa-brands fa-cc-apple-pay"></i></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa-brands fa-google-pay"></i></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa-brands fa-cc-amazon-pay"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class= "mekk">
+                <p>©2023 Designed by a lettuce | All Rights Reserved</p>
+            </div>
+        </div>
+        <!-- <p>©2023 Developers institute | All Rights Reserved</p> -->
+    </footer>
 
     <!-- the script to ion-icon -->
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>

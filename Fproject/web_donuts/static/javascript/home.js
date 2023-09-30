@@ -45,3 +45,39 @@ const toggleNavbar = function () {
 
 addEventOnElements(navTogglers, "click", toggleNavbar);
 
+// Function to toggle scroll buttons based on screen size
+function toggleScrollButtons() {
+    const scrollContainer = document.querySelector(".scroll-container");
+    const scrollButtons = document.querySelector(".scroll-buttons");
+
+    if (scrollContainer.scrollWidth > scrollContainer.clientWidth) {
+        scrollButtons.style.display = "block";
+    } else {
+        scrollButtons.style.display = "none";
+    }
+    const nextButton = document.querySelector(".next-button");
+
+    nextButton.addEventListener("click", () => {
+        scrollContainer.scrollLeft += 300; //The distance to be moved?
+    });
+}
+// const nextButton = document.querySelector(".next-button");
+
+// nextButton.addEventListener("click", () => {
+//     scrollContainer.scrollLeft += 300; //The distance to be moved?
+// });
+
+
+window.addEventListener("resize", toggleScrollButtons);
+
+//toggle checking
+toggleScrollButtons();
+// const starInputs = document.querySelectorAll('.star-rating input[type="radio"]');
+
+// starInputs.forEach((input) => {
+//     input.addEventListener('change', (event) => {
+//         const selectedRating = event.target.value;
+//         console.log('Selected rating:', selectedRating);
+        
+//     });
+// });

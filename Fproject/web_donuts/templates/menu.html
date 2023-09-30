@@ -1,50 +1,70 @@
-<!-- {% load static %}
 
-<link rel="stylesheet" href="{% static 'css/menu.css' %}">
-
-<div class="menu">
-
-    {% for donut in donuts %}
-    <div class="donut">
-        <img src="{{ donut.image.url }}" alt="{{ donut.name }}" class="donut-img">
-        <h3 class="donut-name">{{ donut.name }}</h3>
-        <p class="donut-category">Category: {{ donut.get_category_display }}</p>
-        <p class="donut-price">Price: ${{ donut.price }}</p>
-        <label for="quantity">Quantity:</label>
-        <input type="number" name="quantity" id="quantity" value="1" min="1">
-        <button onclick="addToCart('{{ donut.id }}')">Add to Cart</button>
-         for now -->
-        <!-- <br />
-        <br />
-    </div>
-    {% endfor %}
-</div> -->
 {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <link rel="stylesheet" href="{% static 'css/menu.css' %}">
+    <!-- Unicons CSS -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Croissant+One&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="nav" id="nav">
+        <i class="uil uil-bars navOpenBtn"></i>
+        <p class="logo">
+            <img src="{% static 'images/donut.svg' %}" width="90" height="50" alt="Donuts Dreams - Home" class="img">
+            <span class="logo-text">Donuts <br /> <span class="logo-text-2">Dreams</span></span>
+        </p>
+    
+        <ul class="nav-links">
+            <i class="uil uil-times navCloseBtn"></i>
+            <li class="li"><a href="{% url 'home' %}"><div class="separator"></div><span class="tab">HOME</span></a></li>
+            <li class="li"><a href="{% url 'about' %}"><div class="separator"></div><span class="tab">ABOUT US</span></a></li>
+            <li class="li"><a href="{% url 'events' %}"><div class="separator"></div><span class="tab">EVENTS</span></a></li>
+            <li class="li"><a href="#"><div class="separator"></div><span class="tab">LOGIN</span></a></li>
+        </ul>
+    
+        <i class="uil uil-search search-icon" id="searchIcon"></i>
+        <!-- <i class="fa-solid fa-cart-shopping"></i> -->
+        <a href="#" id="cart"><ion-icon name="cart-outline"></ion-icon></a>
+        <div class="search-box">
+            <i class="uil uil-search search-icon"></i>
+            <input type="text" placeholder="Search Category, donuts ..."  id = "search-bar"/>
 
-<link rel="stylesheet" href="{% static 'css/menu.css' %}">
-
-<div class="menu">
-
-    {% for category, donuts in donuts_by_category.items %}
-    <div class="category">
-        <h2>{{ category }}</h2>
-        <div class="donut-list">
-            {% for donut in donuts %}
-            <div class="donut">
-                <img src="{{ donut.image.url }}" alt="{{ donut.name }}" class="donut-img">
-                <h3 class="donut-name">{{ donut.name }}</h3>
-                <p class="donut-category">Category: {{ donut.get_category_display }}</p>
-                <p class="donut-price">Price: ${{ donut.price }}</p>
-                <label for="quantity">Quantity:</label>
-                <input type="number" name="quantity" id="quantity" value="1" min="1">
-                <button onclick="addToCart('{{ donut.id }}')">Add to Cart</button>
-                <!-- for now -->
-                <br />
-                <br />
-            </div>
-            {% endfor %}
         </div>
-    </div>
-    {% endfor %}
+    </nav>
 
-</div>
+        
+        <!-- <div class="menu">
+
+            {% for category, donuts in donuts_by_category.items %}
+            <div class="category">
+                <h2>{{ category }}</h2>
+                <div class="donut-list">
+                    {% for donut in donuts %}
+                    <div class="donut">
+                        <img src="{{ donut.image.url }}" alt="{{ donut.name }}" class="donut-img">
+                        <h3 class="donut-name">{{ donut.name }}</h3>
+                        <p class="donut-category">Category: {{ donut.get_category_display }}</p>
+                        <p class="donut-price">Price: ${{ donut.price }}</p>
+                        <label for="quantity">Quantity:</label>
+                        <input type="number" name="quantity" id="quantity" value="1" min="1">
+                        <button onclick="addToCart('{{ donut.id }}')">Add to Cart</button>
+                      
+                        <br />
+                        <br />
+                    </div>
+                    {% endfor %}
+                </div>
+            </div> -->
+            <!-- {% endfor %} -->
+
+        </div>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="{% static 'javascript/menu.js' %}"></script>
+</body>
+</html>

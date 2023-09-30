@@ -1,0 +1,182 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+    <link rel="stylesheet" href="{% static 'css/events.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
+
+    <!-- Unicons CSS -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Croissant+One&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <img src="{% static 'images/pink-wall.jpg' %}" alt="background image" class="pink">
+
+    <nav class="nav" id="nav">
+        <i class="uil uil-bars navOpenBtn"></i>
+        <p class="logo">
+            <img src="{% static 'images/donut.svg' %}" width="90" height="50" alt="Donuts Dreams - Home" class="img">
+            <span class="logo-text">Donuts <br /> <span class="logo-text-2">Dreams</span></span>
+        </p>
+
+        <ul class="nav-links">
+            <i class="uil uil-times navCloseBtn"></i>
+            <li class="li"><a href="{% url 'home' %}">
+                    <div class="separator"></div><span class="tab">HOME</span>
+                </a></li>
+            <li class="li"><a href="{% url 'menu' %}">
+                    <div class="separator"></div><span class="tab">DONUTS</span>
+                </a></li>
+            <li class="li"><a href="{% url 'about' %}">
+                    <div class="separator"></div><span class="tab">ABOUT US</span>
+                </a></li>
+            <li class="li"><a href="#">
+                    <div class="separator"></div><span class="tab">LOGIN</span>
+                </a></li>
+        </ul>
+
+        <!-- <i class="uil uil-search search-icon" id="searchIcon"></i>
+        <div class="search-box">
+            <i class="uil uil-search search-icon"></i>
+            <input type="text" placeholder="Search here..." id="search-bar" />
+        </div> -->
+    </nav>
+    <div class="hero">
+        <!-- <img src="{% static 'images/pink-wall.jpg' %}" alt="background image" class="pink"> -->
+        <div class="overlay">
+            <p class="neonText-LightPink">"Support your local <span class="donut-txt">Donut Dealer"</span></p>
+        </div>
+    </div>
+    <div class="contain">
+        <div class = "left">
+            <h3 class="title">Celebrate with Us</h3>
+            <p>"Whether you're commemorating a birthday, wedding, or showing appreciation to your employees, we enhance your
+            celebration with our incredibly delightful donuts."</p><br>
+            <p>Order now or contact us via email or phone and let us know about your special request.</p><br>
+            <div id="bottle"><a href="#" id="cont-1">Contact us</a></div>
+
+        </div>
+        <div class = "right">
+            <img src="{% static 'images/Donuts-Wall.jpg' %}" alt="let's celebrate" width = "300px">
+            <img src="{% static 'images/lets-party.jpg' %}" alt="let's celebrate" width = "300px">
+        </div>
+    </div>
+
+    <div class="contain">
+        <div class="right" id="pinky">
+            <img src="{% static 'images/person.jpg' %}" alt="private evnts" width = "300px">
+            <img src="{% static 'images/pinky.jpg' %}" alt="private events" width = "300px">
+        </div>
+        <div class="left">
+            <h3 class="title" id="punk">Private Events</h3>
+            <p >"Whether you're cherishing a moment with your loved ones, expressing your affection, or simply enjoying time together,
+            our delectable donuts add a sweet touch to your special occasions."</p><br>
+            <div id="bottle2"><a href="#" id="cont-2">Contact us</a></div>
+            <!-- <a href="#" class="contact-btn" id="cont-1">Contact us</a> -->
+        </div>
+    </div>
+    <div class="contain">
+        <div class="left">
+            <h3 class="title" id="pun">Donut Personalization Event</h3>
+            <p>"Discover your inner donut artist at our Donut Personalization Event! Choose from a tempting selection of donuts and
+            unleash your creativity with delicious toppings and frostings. It's a sweet adventure in every bite."</p><br>
+            <div id="bottle3"><a href="#" id="cont-3">Contact us</a></div>
+
+        </div>
+        <div class="right">
+            <img src="{% static 'images/custom.png' %}" alt="let's celebrate" width="300px">
+            <img src="{% static 'images/donuts-blue.png' %}" alt="let's celebrate" width="300px">
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="ocean">
+            <div class="wave"></div>
+            <div class="wave"></div>
+            <div class="wave"></div>
+        </div>
+        <div class="container">
+            <div class="col1">
+                <a href="#" class="brand">
+                    <p class="logo">
+                        <img src="{% static 'images/donut.svg' %}" width="80" height="51" alt="Donuts Dreams - Home"
+                                class="img">
+                        <span class="logo-txt">Donuts <br /> <span class="logotxt-2">Dreams</span></span>
+                    </p>
+                </a>
+                <ul class="media-icons">
+                    <li><a href="#"><ion-icon name="logo-facebook"></ion-icon></a></li>
+                    <li><a href="#"><ion-icon name="logo-twitter"></ion-icon></a></li>
+                    <li><a href="#"><ion-icon name="logo-linkedin"></ion-icon></a></li>
+                    <li><a href="#"><ion-icon name="logo-instagram"></ion-icon></a></li>
+                </ul>
+            </div>
+            <div class="col2">
+                <ul class="menu">
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    <li><a href="{% url 'menu' %}">Donuts</a></li>
+                    <li><a href="{% url 'about' %}">About Us</a></li>
+                    <li><a href="#Events">Events</a></li>
+                    <li><a href="#">Login</a></li>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem excepturi ipsam unde
+                            obcaecati iusto velit labore consequuntur officiis aut neque?</p>
+                </ul>
+            </div>
+        
+                <!-- <ul class="menu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#">Donuts</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Events</a></li>
+                    <li><a href="#">Login</a></li>
+                </ul> -->
+            <div class="col3">
+                <p>Subscribe to our newsletter</p>
+                <form>
+                    <div class="input-wrap">
+                        <input type="email" placeholder="ex@gmail.com" /><button type="submit"><i
+                                class="fa-solid fa-paper-plane"></i></button>
+                    </div>
+                </form>
+                <ul class="services-icons">
+                    <li>
+                        <a href="#"><i class="fa-brands fa-cc-paypal"></i></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa-brands fa-cc-apple-pay"></i></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa-brands fa-google-pay"></i></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa-brands fa-cc-amazon-pay"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="mekk">
+                <p>©2023 Designed by a lettuce | All Rights Reserved</p>
+            </div>
+        </div>
+        <!-- <p>©2023 Developers institute | All Rights Reserved</p> -->
+    </footer>
+
+  
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="{% static 'javascript/events.js' %}"></script>
+</body>
+
+</html>

@@ -23,3 +23,9 @@ def menu(request):
         donuts_by_category[category] = list(items)
 
     return render(request, 'menu.html', {'donuts_by_category': donuts_by_category})
+
+def about(request):
+    return render(request, 'about.html',{})
+
+def events(request):
+    return render(request, 'events.html',{})
