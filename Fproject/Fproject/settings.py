@@ -80,25 +80,22 @@ MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+import dj_database_url
+DATABASES = {'default': dj_database_url.parse("postgres://donuts_back_user:rrPqYe8fhOWrtOboiSi7jtHAQqkBTXmF@dpg-ckei1rdtj22c73ejttn0-a.oregon-postgres.render.com/donuts_back")}
+    
+
+# from decouple import config
+
 # DATABASES = {
 #     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': config('DB_NAME'),
+#         'USER': config('DB_USER'),
+#         'PASSWORD': config('DB_PASSWORD'),
+#         'HOST': config('DB_HOST'),
+#         'PORT': config('DB_PORT'),
 #     }
 # }
-
-from decouple import config
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': config('DB_NAME'),
-        'USER': config('DB_USER'),
-        'PASSWORD': config('DB_PASSWORD'),
-        'HOST': config('DB_HOST'),
-        'PORT': config('DB_PORT'),
-    }
-}
 
 
 # Password validation
