@@ -81,7 +81,7 @@ MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 import dj_database_url
-DATABASES = {'default': dj_database_url.parse("postgres://donuts_back_user:rrPqYe8fhOWrtOboiSi7jtHAQqkBTXmF@dpg-ckei1rdtj22c73ejttn0-a.oregon-postgres.render.com/donuts_back")}
+DATABASES = {'default': dj_database_url.parse("postgres://donuts_back_user:rrPqYe8fhOWrtOboiSi7jtHAQqkBTXmF@dpg-ckei1rdtj22c73ejttn0-a/donuts_back")}
     
 
 # from decouple import config
