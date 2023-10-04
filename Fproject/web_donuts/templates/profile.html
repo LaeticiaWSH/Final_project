@@ -1,0 +1,72 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/events.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
+
+    <link rel="stylesheet" href="{% static 'css/profile.css' %}">
+    <title>Profile</title>
+    <!-- Unicons CSS -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Croissant+One&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <nav class="nav" id="nav">
+        <i class="uil uil-bars navOpenBtn"></i>
+        <p class="logo">
+            <img src="{% static 'images/donut.svg' %}" width="90" height="50" alt="Donuts Dreams - Home" class="img">
+            <span class="logo-text">Donuts <br /> <span class="logo-text-2">Dreams</span></span>
+        </p>
+    
+        <ul class="nav-links">
+            <i class="uil uil-times navCloseBtn"></i>
+            <li class="li"><a href="{% url 'home' %}">
+                    <div class="separator"></div><span class="tab">HOME</span>
+                </a></li>
+            <li class="li"><a href="{% url 'menu' %}">
+                    <div class="separator"></div><span class="tab">DONUTS</span>
+                </a></li>
+            <li class="li"><a href="{% url 'about' %}">
+                    <div class="separator"></div><span class="tab">ABOUT US</span>
+                </a></li>
+            <li class="li"><a href="{% url 'events' %}">
+                    <div class="separator"></div><span class="tab">EVENTS</span>
+                </a></li>
+            <li class="li"><a href="{% url 'login' %}">
+                    <div class="separator"></div><span class="tab">LOGIN</span>
+                </a></li>
+        </ul>
+    
+        <!-- <i class="uil uil-search search-icon" id="searchIcon"></i>
+            <div class="search-box">
+                <i class="uil uil-search search-icon"></i>
+                <input type="text" placeholder="Search here..." id="search-bar" />
+            </div> -->
+    </nav>
+    <div id="profile">
+        <h2 id="user">User Profile</h2>
+        <p id="name">Username: {{ user_profile.user.username }}</p>
+        <p id="logout"><a href="{% url 'custom_logout' %}" id="log">Logout</a></p>
+    </div>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="{% static 'javascript/events.js' %}"></script>
+
+</body>
+</html>
+
+<!-- <p>Email: {{ user_email }}</p> -->
+
+<!-- <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save Changes</button>
+</form> -->

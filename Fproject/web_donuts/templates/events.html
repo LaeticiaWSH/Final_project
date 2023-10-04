@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Events</title>
+    <title>EVENTS</title>
     <link rel="stylesheet" href="{% static 'css/events.css' %}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -41,7 +41,7 @@
             <li class="li"><a href="{% url 'about' %}">
                     <div class="separator"></div><span class="tab">ABOUT US</span>
                 </a></li>
-            <li class="li"><a href="#">
+            <li class="li"><a href="{% url 'login' %}">
                     <div class="separator"></div><span class="tab">LOGIN</span>
                 </a></li>
         </ul>
@@ -127,19 +127,11 @@
                     <li><a href="{% url 'menu' %}">Donuts</a></li>
                     <li><a href="{% url 'about' %}">About Us</a></li>
                     <li><a href="#Events">Events</a></li>
-                    <li><a href="#">Login</a></li>
+                    <li><a href="{% url 'login' %}">Login</a></li>
                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem excepturi ipsam unde
                             obcaecati iusto velit labore consequuntur officiis aut neque?</p>
                 </ul>
             </div>
-        
-                <!-- <ul class="menu">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#">Donuts</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Events</a></li>
-                    <li><a href="#">Login</a></li>
-                </ul> -->
             <div class="col3">
                 <p>Subscribe to our newsletter</p>
                 <form>

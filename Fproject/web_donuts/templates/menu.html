@@ -24,12 +24,19 @@
             <li class="li"><a href="{% url 'home' %}"><div class="separator"></div><span class="tab">HOME</span></a></li>
             <li class="li"><a href="{% url 'about' %}"><div class="separator"></div><span class="tab">ABOUT US</span></a></li>
             <li class="li"><a href="{% url 'events' %}"><div class="separator"></div><span class="tab">EVENTS</span></a></li>
-            <li class="li"><a href="#"><div class="separator"></div><span class="tab">LOGIN</span></a></li>
+            {% if user.is_authenticated %}
+                <li class="li"><a href="{% url 'custom_logout' %}"><div class="separator"></div><span class="tab">LOGOUT</span></a></li>
+            {% else %}
+                <li class="li"><a href="{% url 'login' %}"><div class="separator"></div><span class="tab">LOGIN</span></a></li>
+            {% endif %}
         </ul>
     
         <i class="uil uil-search search-icon" id="searchIcon"></i>
-        <!-- <i class="fa-solid fa-cart-shopping"></i> -->
-        <a href="#" id="cart"><ion-icon name="cart-outline"></ion-icon></a>
+        <a href="{% url 'profile'%}" id="profile"><ion-icon name="person-outline"></ion-icon></a>
+        <a href="{% url 'cart' %}" id="cart">
+            <ion-icon name="cart-outline"></ion-icon>
+            <span id="cart-count">{{ request.user.cartitem_set.count }}</span>
+        </a>
         <div class="search-box">
             <i class="uil uil-search search-icon"></i>
             <input type="text" placeholder="Search Category, donuts ..."  id = "search-bar"/>
@@ -37,34 +44,35 @@
         </div>
     </nav>
 
-        
-        <!-- <div class="menu">
 
+        <div class="menu">
             {% for category, donuts in donuts_by_category.items %}
-            <div class="category">
+<!-- slugify means if the category is "Chocolate Donuts" slugify will make the id = chocolate-donuts it will convert it to lowercase and put hyphens instead of blank -->
+            <div class="category" id="{{ category|slugify }}">
+                <!-- Category Name -->
                 <h2>{{ category }}</h2>
+        
+                <!-- Donut Listing -->
                 <div class="donut-list">
                     {% for donut in donuts %}
+                    
                     <div class="donut">
                         <img src="{{ donut.image.url }}" alt="{{ donut.name }}" class="donut-img">
                         <h3 class="donut-name">{{ donut.name }}</h3>
-                        <p class="donut-category">Category: {{ donut.get_category_display }}</p>
                         <p class="donut-price">Price: ${{ donut.price }}</p>
                         <label for="quantity">Quantity:</label>
-                        <input type="number" name="quantity" id="quantity" value="1" min="1">
-                        <button onclick="addToCart('{{ donut.id }}')">Add to Cart</button>
-                      
-                        <br />
-                        <br />
+                        <input type="number" name="quantity_{{ donut.id }}" id="quantity_{{ donut.id }}" class="quantity" value="1" min="1">
+                        <a onclick="addToCart('{{ donut.id }}' , $('#quantity_{{ donut.id }}').val())">Add to Cart</a>
                     </div>
                     {% endfor %}
                 </div>
-            </div> -->
-            <!-- {% endfor %} -->
-
+            </div>
+            {% endfor %}
         </div>
+
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="{% static 'javascript/menu.js' %}"></script>
 </body>
 </html>

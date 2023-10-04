@@ -30,7 +30,7 @@
                         <ion-icon name = "location-outline" aria-hidden = "true"></ion-icon>
                     </div>
                     <span class="span">
-                        Donut St, Sprinkleburg City, Moka 1111, Mauritius
+                        Donut St, Sprinkleburg Avenue, Moka 1111, Mauritius
                     </span>
                 </address>
                 <!-- just to make it more pretty -->
@@ -113,7 +113,7 @@
                         </li>
     
                         <li class="navbar-item">
-                            <a href="#" class="navbar-link hover-underline">
+                            <a href="{% url 'login' %}" class="navbar-link hover-underline">
                                 <div class="separator"></div>
     
                                 <span class="span">LogIn</span>
@@ -126,7 +126,7 @@
                         <p class="headline-1 navbar-title">Visit Us</p>
     
                         <address class="body-4">
-                        Donut St, Sprinkleburg City,  <br>
+                        Donut St, Sprinkleburg Avenue,  <br>
                             Moka 1111, Mauritius
                         </address>
     
@@ -274,7 +274,7 @@
                     <li><a href="{% url 'menu' %}">Donuts</a></li>
                     <li><a href="{% url 'about' %}">About Us</a></li>
                     <li><a href="{% url 'events' %}">Events</a></li>
-                    <li><a href="#">Login</a></li>
+                    <li><a href="{% url 'login' %}">Login</a></li>
                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem excepturi ipsam unde
                     obcaecati iusto velit labore consequuntur officiis aut neque?</p>
                 </ul>
